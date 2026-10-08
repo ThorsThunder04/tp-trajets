@@ -15,6 +15,7 @@ class Catalogue{
     void supprimerTrajet(Trajet* _trajet);
     bool chercherTrajet(const Trajet* _trajet)const;
     void afficherCatalogue()const;
+    ListeTrajet* getHead();
 
 };
 

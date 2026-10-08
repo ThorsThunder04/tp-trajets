@@ -15,7 +15,9 @@ class TrajetCompose : Trajet
         bool includesTrajet(const Trajet* _trajet) const;
 
         bool operator==(const TrajetCompose* t) const;
-    
+
+        std::string stringuifier()const;
+        
     protected:
         ListeTrajet* trajets;
 };

@@ -2,6 +2,9 @@
 #include "Trajet.h"
 #include "ListeTrajet.h"
 #include "TrajetCompose.h"
+#include <cstring>
+
+using namespace std;
 
 TrajetCompose::TrajetCompose(ListeTrajet* t): trajets(t){}
 
@@ -34,4 +37,8 @@ bool TrajetCompose::operator==(const TrajetCompose* t) const{
 
     if(t2==nullptr) return true;
     else return false;
+}
+
+string TrajetCompose::stringuifier()const{
+    return trajets->stringuifier();
 }
