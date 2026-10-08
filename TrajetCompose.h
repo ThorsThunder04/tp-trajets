@@ -7,14 +7,14 @@
 class TrajetCompose : Trajet
 {
     public:
-        TrajetCompose(const ListeTrajet* t);
+        TrajetCompose(ListeTrajet* t);
         TrajetCompose(const TrajetCompose& trajet); // copy
         
         virtual ~TrajetCompose();
 
         bool includesTrajet(const Trajet* _trajet) const;
 
-        bool operator==(const Trajet& t) const;
+        bool operator==(const TrajetCompose* t) const;
     
     protected:
         ListeTrajet* trajets;
