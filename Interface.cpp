@@ -99,13 +99,21 @@ void Interface::ajouterTrajetCompose(Catalogue* c)const{
 }
 
 void Interface::runApp(Catalogue* c)const{
-    while(true){
+    bool fin = false;
+    while(!fin){
         afficherMenu();
         int choix;
         cin >> choix;
 
         switch(choix){
-            //case 1: 
+            case 1: ajouterTrajetSimple(c->getHead()); break;
+            case 2: supprimerTrajet(c); break;
+            case 3: c->afficherCatalogue(); break;
+            case 4: chercherTrajet(c); break;
+            case 5: fin = true; break;
+            default: 
+            cout << "mauvais choix veuillez saisir un no correct.\n";
+            break; 
         }
     }   
 }

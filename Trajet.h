@@ -24,7 +24,7 @@ class Trajet{
     
     public:
         virtual std::string stringuifier() = 0;
-    
+
 };
 
 #endif
