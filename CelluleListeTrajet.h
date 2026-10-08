@@ -14,10 +14,10 @@ class CelluleListeTrajet {
         
         
         CelluleListeTrajet* getNext();
-        Trajet* getVal();
+        Trajet* getVal() ;
 
         void setNext(CelluleListeTrajet* cellule);
-        void setVal(Trajet* newVal) { val = newVal; }
+        void setVal(Trajet* newVal);
 };
 
 #endif
