@@ -52,6 +52,8 @@ class ListeTrajet {
          */
         CelluleListeTrajet* getHead() const;
 
+        std::string stringuifier() const;
+
         
 
 };

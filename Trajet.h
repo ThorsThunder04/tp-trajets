@@ -21,6 +21,8 @@ class Trajet{
         Trajet();
         Trajet(const std::string _depart, const std::string _arrivee, enum Transport);
         
+    
+    public:
         virtual std::string stringuifier() = 0;
     
 };

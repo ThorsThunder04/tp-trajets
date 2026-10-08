@@ -4,7 +4,7 @@
 #include "Trajet.h"
 #include "ListeTrajet.h"
 
-class TrajetCompose : Trajet
+class TrajetCompose : public Trajet
 {
     public:
         TrajetCompose(ListeTrajet* t);
@@ -15,7 +15,7 @@ class TrajetCompose : Trajet
         bool includesTrajet(const Trajet* _trajet) const;
 
         bool operator==(const TrajetCompose* t) const;
-    
+
     protected:
         ListeTrajet* trajets;
 };

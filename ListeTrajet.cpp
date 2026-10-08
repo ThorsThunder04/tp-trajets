@@ -1,5 +1,7 @@
 #include "ListeTrajet.h"
 #include "Trajet.h"
+#include "TrajetCompose.h"
+#include "TrajetSimple.h"
 
 
 ListeTrajet::ListeTrajet(Trajet* trajet) : taille(0) 
@@ -68,3 +70,16 @@ unsigned int ListeTrajet::size() const {
 }
 
 CelluleListeTrajet* ListeTrajet::getHead() const { return liste ;}
+
+std::string ListeTrajet::stringuifier() const {
+    CelluleListeTrajet* iter = liste;
+    std::string out = "[\n";
+    while (iter != nullptr) {
+        out += "\t";
+        out += iter->getVal()->stringuifier() + "\n";
+        iter = iter->getNext();
+    }
+    out += "]";
+
+    return out;
+}
