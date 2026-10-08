@@ -10,6 +10,7 @@ class TrajetSimple : public Trajet{
     TrajetSimple(const TrajetSimple& _trajet);
     
     std::string stringuifier() override;
+    bool operator==(const TrajetSimple& T2) const;
 
 };
 

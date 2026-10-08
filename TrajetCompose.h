@@ -1,23 +1,23 @@
-#include "Trajet.h"
-
 #ifndef _TRAJET_COMPOSE
 #define _TRAJET_COMPOSE
+
+#include "Trajet.h"
+#include "ListeTrajet.h"
 
 class TrajetCompose : Trajet
 {
     public:
-        TrajetCompose(Trajet t[], int n);
+        TrajetCompose(const ListeTrajet* t);
         TrajetCompose(const TrajetCompose& trajet); // copy
         
         virtual ~TrajetCompose();
 
-        bool includesTrajet(Trajet t);
+        bool includesTrajet(const Trajet* _trajet) const;
 
-        void operator==(Trajet t);
+        bool operator==(const Trajet& t) const;
     
     protected:
-        Trajet** trajets;
-        unsigned int nTrajets;
+        ListeTrajet* trajets;
 };
 
 

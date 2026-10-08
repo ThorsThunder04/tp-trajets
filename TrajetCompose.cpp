@@ -1,30 +1,20 @@
-
-/*
 #include "Trajet.h"
+#include "ListeTrajet.h"
 #include "TrajetCompose.h"
 
-TrajetCompose::TrajetCompose(Trajet t[], int n) : Trajet() {
+TrajetCompose::TrajetCompose(const ListeTrajet* t): trajets(t){}
 
-    nTrajets = n;    
-    trajets = new Trajet*[n];
-    for (int i = 0; i < n; i++) {
-            if (typeid(t[i]) == typeid(TrajetCompose)) {
-                trajets[i] = new TrajetCompose;
-            } else if (typeid(t[i]) == typeid(TrajetSimple)) {
-                trajets[i] = new TrajetSimple;
-            }
-            *trajets[i] = t[i];
-    }
-    depart = trajets[0].depart;
-    arrivee = trajets[n-1].arrivee;
-}
+TrajetCompose::TrajetCompose(const TrajetCompose& _trajet){
+    trajets = _trajet.trajets;
+} 
         
-        ~TrajetCompose() {
-        }
+TrajetCompose::~TrajetCompose(){
+    delete trajets;
+}
 
-        void ajouterTrajet(Trajet t);
-        void supprimerTrajet(Trajet t);
-        bool includesTrajet(Trajet t);
+bool TrajetCompose::includesTrajet(const Trajet* t) const{
+    return trajets->contient(t);
+}
 
-        void operator==(Trajet t);
-   */ 
+bool TrajetCompose::operator==(const Trajet& t) const{
+}
