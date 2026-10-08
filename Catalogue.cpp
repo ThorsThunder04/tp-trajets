@@ -1,6 +1,7 @@
 #include "Catalogue.h"
 #include "Trajet.h"
 #include <iostream>
+#include "ListeTrajet.h"
 
 Catalogue::Catalogue() : liste(nullptr){}
 
