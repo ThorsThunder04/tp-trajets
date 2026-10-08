@@ -3,7 +3,7 @@
 #include "Trajet.h"
 
 
-ListeTrajet::ListeTrajet(Trajet* trajet) 
+ListeTrajet::ListeTrajet(Trajet* trajet) : taille(0) 
 {
     liste = new CelluleListeTrajet{trajet, nullptr};
 }
@@ -11,7 +11,7 @@ ListeTrajet::ListeTrajet(Trajet* trajet)
 void ListeTrajet::ajouter(Trajet* trajet) {
 
     liste = new CelluleListeTrajet{trajet, liste};
-
+    taille++;
 }
 
 bool ListeTrajet::suppression(Trajet* trajet) {
@@ -22,6 +22,8 @@ bool ListeTrajet::suppression(Trajet* trajet) {
         temp = liste;
         liste = temp->getNext();
         delete temp;
+        taille--;
+        return true;
     };
     
     temp = liste;
@@ -33,6 +35,7 @@ bool ListeTrajet::suppression(Trajet* trajet) {
         CelluleListeTrajet* toDelete = temp->getNext();
         temp->setNext(toDelete->getNext());
         delete toDelete;
+        taille--;
         return true;
     }
 
@@ -50,12 +53,7 @@ bool ListeTrajet::contient(Trajet* t) {
 }
 
 unsigned int ListeTrajet::size() {
-    unsigned int n = 0;
-    CelluleListeTrajet* iter = liste;
-    while (iter != nullptr) {
-        n++;
-        iter = iter->getNext();
-    }
-
-    return n;
+    return taille;
 }
+
+CelluleListeTrajet* ListeTrajet::getHead() { return liste ;}
