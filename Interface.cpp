@@ -58,7 +58,7 @@ void Interface::ajouterTrajetSimple(ListeTrajet* l)const{
         if(validerSaisie()) ok = true;
     }
 
-    enum Transport type = int2transport(typeTransport);
+    enum Transport type = static_cast<enum Transport>(typeTransport);
     TrajetSimple* t = new TrajetSimple{depart, arrivee, type};
     l->ajouter(t);
 }
