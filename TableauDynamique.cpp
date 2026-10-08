@@ -1,4 +1,5 @@
 #include "TableauDynamique.h"
+<<<<<<< HEAD
 #include "TrajetSimple.h"
 #include "Trajet.h"
 #include "TrajetSimple.h"
@@ -80,3 +81,7 @@ void TableauDynamique::supprimerTrajet(const Trajet& _trajet){
         
     }
 }
+=======
+#include <iostream>
+
+>>>>>>> ed60b2d14a8692816eb43c80f97df2dd4f02f118

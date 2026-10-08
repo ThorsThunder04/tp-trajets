@@ -1,0 +1,51 @@
+@startuml "Traveling"
+
+
+enum Transport {
+    PIED
+    VOITURE
+    BUS
+    TRAIN
+}
+
+abstract class Trajet {
+    - villeSrc: string
+    - villeDest: string
+    - moyenTransport: Transport
+    - trajetsAdj: Trajet
+    --
+    + stringifier(): string
+}
+
+class TrajetSimple extends Trajet {
+
+}
+
+class TrajetCompose extends Trajet {
+    - trajets: Trajet[]
+}
+
+
+class Catalogue {
+    - trajets: Trajet[]
+
+    --
+    + ajoutTrajet(Trajet t)
+    + supprimerTrajet(Trajet t)
+    + rechercherParcoursSimple(string a, string b) : Trajet[]
+    + rechercherParcoursComplique(string a, string b) : Trajet[][]
+    + stringifier() : string
+}
+Trajet "*" -- Catalogue : Liste <
+
+class UserInterface {
+    - catalogue: Catalogue
+    ---
+    + afficherTrajets()
+    + afficherVilles()
+    + ajouterTrajetSimple()
+    + ajouterTrajetCompose()
+    + rechercherParcours()
+}
+
+@enduml
