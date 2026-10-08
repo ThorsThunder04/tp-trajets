@@ -1,4 +1,5 @@
 
+/*
 #include "Trajet.h"
 #include "TrajetCompose.h"
 
@@ -26,4 +27,4 @@ TrajetCompose::TrajetCompose(Trajet t[], int n) : Trajet() {
         bool includesTrajet(Trajet t);
 
         void operator==(Trajet t);
-    
+   */ 
