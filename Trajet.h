@@ -5,11 +5,11 @@
 #include <cstring>
 
 enum Transport{
-    PIETON,
-    VOITURE,
-    BUS,
-    AVION,
-    TRAIN
+    PIETON = 1,
+    VOITURE = 2,
+    BUS = 3,
+    AVION = 4,
+    TRAIN = 5
 };
 
 class Trajet{
@@ -24,5 +24,7 @@ class Trajet{
     public:
         virtual std::string stringuifier() = 0;    
 };
+
+enum Transport int2transport(int x);
 
 #endif
