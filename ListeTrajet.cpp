@@ -1,4 +1,3 @@
-
 #include "ListeTrajet.h"
 #include "Trajet.h"
 
@@ -14,7 +13,7 @@ void ListeTrajet::ajouter(Trajet* trajet) {
     taille++;
 }
 
-bool ListeTrajet::suppression(Trajet* trajet) {
+bool ListeTrajet::suppression(const Trajet* trajet) {
     CelluleListeTrajet* temp;
 
     if (liste == nullptr) return false;
@@ -42,7 +41,7 @@ bool ListeTrajet::suppression(Trajet* trajet) {
     return false;
 }
 
-bool ListeTrajet::contient(Trajet* t) {
+bool ListeTrajet::contient(const Trajet* t) const {
 
     CelluleListeTrajet* iter = liste;
     while (iter != nullptr && iter->getVal()) {
@@ -52,8 +51,8 @@ bool ListeTrajet::contient(Trajet* t) {
     return (iter->getVal() == t);
 }
 
-unsigned int ListeTrajet::size() {
+unsigned int ListeTrajet::size() const {
     return taille;
 }
 
-CelluleListeTrajet* ListeTrajet::getHead() { return liste ;}
+CelluleListeTrajet* ListeTrajet::getHead() const { return liste ;}

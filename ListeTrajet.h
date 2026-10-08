@@ -26,7 +26,7 @@ class ListeTrajet {
          * @param trajet si trajet est dans la liste chainee elle sera supprimee
          * @returns true si la suppression c'est produit, false sinon (introuvable)
          */
-        bool suppression(Trajet* trajet);
+        bool suppression(const Trajet* trajet);
 
 
         /**
@@ -35,21 +35,21 @@ class ListeTrajet {
          * @param trajet le tarjet a rechercher 
          * @return true si `trajet` est dans la liste, `false` sinon
          */
-        bool contient(Trajet* t);
+        bool contient(const Trajet* t) const;
         
         /**
          * @brief Compte combiens d'elements sont dans la liste
          * 
          * @return unsigned int le nombre d'elements dans la liste
          */
-        unsigned int size();
+        unsigned int size() const;
 
         /**
          * @brief Recupere la tete du liste
          * 
          * @return CelluleListeTrajet* 
          */
-        CelluleListeTrajet* getHead();
+        CelluleListeTrajet* getHead() const;
 
         
 
