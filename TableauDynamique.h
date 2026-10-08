@@ -8,7 +8,7 @@ class TableauDynamique {
     public:
     int alloue;
     int rempli;
-    Trajet * tab; 
+    Trajet * tab[]; 
 
     TableauDynamique();
     TableauDynamique(const TableauDynamique& tabDyn);
@@ -16,6 +16,7 @@ class TableauDynamique {
     void reduireTableau();
     void ajouteTrajet(const Trajet& _trajet);
     void supprimerTrajet(const Trajet& _trajet);
+    int chercherTrajet(const Trajet& _trajet) const; // retourne l'indice dans le tableau
 
     Trajet& operator[](int indice);
 
