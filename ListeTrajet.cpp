@@ -7,6 +7,18 @@ ListeTrajet::ListeTrajet(Trajet* trajet) : taille(0)
     liste = new CelluleListeTrajet{trajet, nullptr};
 }
 
+ListeTrajet::~ListeTrajet() {
+
+    CelluleListeTrajet* prev = liste;
+    CelluleListeTrajet* curr = liste->getNext();
+    while (curr!=nullptr) {
+        delete prev;
+        prev = curr;
+        curr = curr->getNext();
+    }
+    delete prev;
+}
+
 void ListeTrajet::ajouter(Trajet* trajet) {
 
     liste = new CelluleListeTrajet{trajet, liste};

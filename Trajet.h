@@ -20,7 +20,7 @@ class Trajet{
 
     public:
         Trajet();
-        Trajet(const std::string& _depart, const std::string& _arrivee, enum Transport);
+        Trajet(const std::string _depart, const std::string _arrivee, enum Transport);
         
         virtual std::string stringuifier() = 0;
     

@@ -12,6 +12,7 @@ class ListeTrajet {
     
     public:
         ListeTrajet(Trajet* trajet);
+        virtual ~ListeTrajet();
         
         /**
          * @brief Ajouter un trajet en tete de liste
