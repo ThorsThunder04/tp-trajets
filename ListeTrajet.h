@@ -35,7 +35,7 @@ class ListeTrajet {
          * @param trajet le tarjet a rechercher 
          * @return true si `trajet` est dans la liste, `false` sinon
          */
-        bool contient(Trajet* t);
+        bool contient(const Trajet* t)const;
         
         /**
          * @brief Compte combiens d'elements sont dans la liste

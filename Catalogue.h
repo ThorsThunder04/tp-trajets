@@ -11,9 +11,9 @@ class Catalogue{
     public:
     Catalogue();
 
-    void ajouterTrajet(const Trajet& _trajet);
-    void supprimerTrajet(const Trajet& _trajet);
-    Trajet& chercherTrajet(const Trajet& _trajet)const;
+    void ajouterTrajet(Trajet* _trajet);
+    void supprimerTrajet(Trajet* _trajet);
+    bool chercherTrajet(const Trajet* _trajet)const;
     void afficherCatalogue()const;
 
 };

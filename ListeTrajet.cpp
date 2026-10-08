@@ -42,7 +42,7 @@ bool ListeTrajet::suppression(Trajet* trajet) {
     return false;
 }
 
-bool ListeTrajet::contient(Trajet* t) {
+bool ListeTrajet::contient(const Trajet* t)const {
 
     CelluleListeTrajet* iter = liste;
     while (iter != nullptr && iter->getVal()) {
