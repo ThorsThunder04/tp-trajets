@@ -8,6 +8,7 @@ class ListeTrajet {
 
     private:
         CelluleListeTrajet* liste = nullptr;
+        unsigned int taille;
     
     public:
         ListeTrajet(Trajet* trajet);
@@ -42,6 +43,13 @@ class ListeTrajet {
          * @return unsigned int le nombre d'elements dans la liste
          */
         unsigned int size();
+
+        /**
+         * @brief Recupere la tete du liste
+         * 
+         * @return CelluleListeTrajet* 
+         */
+        CelluleListeTrajet* getHead();
 
         
 
